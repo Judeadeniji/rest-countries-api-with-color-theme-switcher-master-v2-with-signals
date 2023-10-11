@@ -7,7 +7,7 @@ function Header({ onToggleDarkMode, darkMode }) {
     <header
       className={` py-9 px-32 shadow-header-sh flex  justify-between mb-20  ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
-      } sma:px-8 sma:mb-10`}
+      } sma:px-8 sma:mb-10 dark:bg-dark-el-bg`}
     >
       <Link
         to={"/"}

@@ -19,7 +19,7 @@ function Homepage({
     <div
       className={`font-sans font-normal min-h-screen  ${
         darkMode ? "bg-white-bg text-dark-text " : "bg-dark-bg text-white"
-      }`}
+      } dark:bg-dark-bg dark:text-white`}
     >
       <Header onToggleDarkMode={onToggleDarkMode} darkMode={darkMode} />
       <main>

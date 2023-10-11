@@ -5,7 +5,7 @@ function CountryItem({ country, darkMode }) {
     <Link
       className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer   ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
-      }`}
+      } dark:bg-dark-el-bg`}
       to={`country/${country.cca3}`}
     >
       <img

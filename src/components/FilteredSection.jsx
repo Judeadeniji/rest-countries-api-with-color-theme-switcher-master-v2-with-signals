@@ -14,7 +14,7 @@ function FilteredSection({
       <div
         className={` rounded-lg py-7 px-12 flex items-center gap-8 w-full max-w-[48rem]   ${
           darkMode ? "bg-white" : "bg-dark-el-bg"
-        }`}
+        } dark:bg-dark-el-bg`}
       >
         {darkMode ? (
           <img src={SearchWhiteIcon} alt="search icon" />
@@ -32,7 +32,7 @@ function FilteredSection({
       <select
         className={`bg-dark-el-bg py-7 px-10 leading-8 text-[1.4rem] rounded-lg shadow-filter-sh border-transparent focus:outline-none  ${
           darkMode ? "bg-white" : "bg-dark-el-bg"
-        } med:self-start med:w-[20rem]`}
+        } med:self-start med:w-[20rem] dark:bg-dark-el-bg`}
         value={region}
         onChange={(e) => onChangeRegion(e.target.value)}
       >

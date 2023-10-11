@@ -118,7 +118,6 @@ function Items({ name, span }) {
 
 function Border({ countryCode, darkMode }) {
   const [borderName, setBorderName] = useState("");
-  console.log(countryCode);
   useEffect(() => {
     async function fetchBorderName() {
       try {
@@ -139,9 +138,9 @@ function Border({ countryCode, darkMode }) {
     <Link
       className={`text-[1.4rem] font-light py-2 px-11  rounded-[0.2rem] shadow-border-sh cursor-pointer   ${
         darkMode
-          ? "bg-white border-o border-0 border-solid border-[#979797]"
+          ? "bg-white border-0 border-solid border-[#979797]"
           : "bg-dark-el-bg"
-      } sma:text-[1.2rem]`}
+      } sma:text-[1.2rem] dark:bg-dark-el-bg`}
       to={`/country/${countryCode}`}
     >
       {borderName}

@@ -8,7 +8,7 @@ function BackBtn({ darkMode }) {
     <button
       className={` rounded-[0.6rem] shadow-back-sh py-4 px-12 flex items-center gap-4 ml-32    ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
-      } sma:ml-8`}
+      } sma:ml-8 dark:bg-dark-el-bg`}
       onClick={() => navigate(-1)}
     >
       {darkMode ? (

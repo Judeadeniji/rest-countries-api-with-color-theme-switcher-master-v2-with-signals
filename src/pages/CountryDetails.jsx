@@ -15,7 +15,7 @@ function CountryDetails({
     <section
       className={`min-h-screen  ${
         darkMode ? "bg-white text-dark-text" : "bg-dark-bg text-white"
-      }`}
+      } dark:bg-dark-bg dark:text-white`}
     >
       <Header darkMode={darkMode} onToggleDarkMode={onToggleDarkMode} />
       <BackBtn darkMode={darkMode} />
