@@ -13,11 +13,11 @@ export default {
         sans: ["Nunito Sans", "sans-serif"],
       },
       boxShadow: {
-        "header-sh": "0px 2px 4px 0px rgba(0, 0, 0, 0.06)",
-        "filter-sh": "0px 2px 9px 0px rgba(0, 0, 0, 0.05)",
-        "country-sh": "0px 0px 7px 2px rgba(0, 0, 0, 0.03)",
+        "header-sh": "0px 2px 4px 0px rgba(0, 0, 0, 0.2)",
+        "filter-sh": "0px 2px 9px 0px rgba(0, 0, 0, 0.2)",
+        "country-sh": "0px 0px 7px 2px rgba(0, 0, 0, 0.2)",
         "back-sh": "0px 0px 7px 0px rgba(0, 0, 0, 0.29)",
-        "border-sh": "0px 0px 4px 1px rgba(0, 0, 0, 0.10)",
+        "border-sh": "0px 0px 4px 1px rgba(0, 0, 0, 0.2)",
       },
       screens: {
         max: { max: "81.25em" },
