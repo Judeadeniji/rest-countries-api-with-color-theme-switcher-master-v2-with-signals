@@ -1,17 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CountryItem({ country, darkMode }) {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(`/country/${country.name.common}`); // Navigate to the dynamic route
-  };
-
   return (
     <Link
       className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer   ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
       }`}
-      onClick={handleClick}
       to={`country/${country.cca3}`}
     >
       <img

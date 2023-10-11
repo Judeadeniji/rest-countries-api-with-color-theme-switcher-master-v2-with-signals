@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CountryDetail({
   countryName,
@@ -9,12 +9,6 @@ function CountryDetail({
   loading,
   darkMode,
 }) {
-  const navigate = useNavigate();
-
-  function handleBorderClick(borderName) {
-    navigate(`/country/${borderName}`);
-  }
-
   useEffect(() => {
     async function fetchCountryDetails() {
       try {
@@ -40,10 +34,6 @@ function CountryDetail({
   if (loading) {
     return <Spinner />;
   }
-
-  // const nativeNames = Object.values(country?.name?.nativeName)
-  //   .map((name) => name.common)
-  //   .join(", ");
 
   const nativeNames = country?.name?.nativeName
     ? Object.values(country.name.nativeName)
@@ -102,7 +92,6 @@ function CountryDetail({
                 <Border
                   countryCode={border}
                   key={border}
-                  onBorderClick={() => handleBorderClick(border)}
                   country={country.name.common}
                   darkMode={darkMode}
                 />
@@ -116,7 +105,6 @@ function CountryDetail({
         </div>
       </div>
     </section>
-    // <p>a</p>
   );
 }
 
@@ -128,7 +116,7 @@ function Items({ name, span }) {
   );
 }
 
-function Border({ countryCode, onBorderClick, darkMode }) {
+function Border({ countryCode, darkMode }) {
   const [borderName, setBorderName] = useState("");
   console.log(countryCode);
   useEffect(() => {
@@ -154,7 +142,6 @@ function Border({ countryCode, onBorderClick, darkMode }) {
           ? "bg-white border-o border-0 border-solid border-[#979797]"
           : "bg-dark-el-bg"
       } sma:text-[1.2rem]`}
-      onClick={onBorderClick}
       to={`/country/${countryCode}`}
     >
       {borderName}

@@ -9,7 +9,7 @@ function BackBtn({ darkMode }) {
       className={` rounded-[0.6rem] shadow-back-sh py-4 px-12 flex items-center gap-4 ml-32    ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
       } sma:ml-8`}
-      onClick={() => navigate(-2)}
+      onClick={() => navigate(-1)}
     >
       {darkMode ? (
         <img src={BackWhite} alt="back" />
