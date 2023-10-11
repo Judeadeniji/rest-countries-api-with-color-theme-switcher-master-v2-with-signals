@@ -13,7 +13,7 @@ function CountryDetails({
   const { countryName } = useParams();
   return (
     <section
-      className={`min-h-screen transition-all duration-300 ${
+      className={`min-h-screen  ${
         darkMode ? "bg-white text-dark-text" : "bg-dark-bg text-white"
       }`}
     >

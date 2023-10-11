@@ -150,7 +150,7 @@ function Border({ countryCode, onBorderClick, darkMode }) {
 
   return (
     <Link
-      className={`text-[1.4rem] font-light py-2 px-11  rounded-[0.2rem] shadow-border-sh cursor-pointer transition-all duration-300  ${
+      className={`text-[1.4rem] font-light py-2 px-11  rounded-[0.2rem] shadow-border-sh cursor-pointer   ${
         darkMode
           ? "bg-white border-o border-0 border-solid border-[#979797]"
           : "bg-dark-el-bg"

@@ -8,7 +8,7 @@ function CountryItem({ country, darkMode }) {
 
   return (
     <Link
-      className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer  transition-all duration-300   ${
+      className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer   ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
       }`}
       onClick={handleClick}

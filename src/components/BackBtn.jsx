@@ -6,7 +6,7 @@ function BackBtn({ darkMode }) {
   const navigate = useNavigate();
   return (
     <button
-      className={` rounded-[0.6rem] shadow-back-sh py-4 px-12 flex items-center gap-4 ml-32  transition-all duration-300  ${
+      className={` rounded-[0.6rem] shadow-back-sh py-4 px-12 flex items-center gap-4 ml-32    ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
       } sma:ml-8`}
       onClick={() => navigate(-2)}

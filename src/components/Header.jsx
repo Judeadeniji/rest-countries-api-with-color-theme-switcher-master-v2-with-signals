@@ -5,7 +5,7 @@ import sunImg from "/sun.svg";
 function Header({ onToggleDarkMode, darkMode }) {
   return (
     <header
-      className={` py-9 px-32 shadow-header-sh flex  justify-between mb-20 transition-all duration-300  ${
+      className={` py-9 px-32 shadow-header-sh flex  justify-between mb-20  ${
         darkMode ? "bg-white" : "bg-dark-el-bg"
       } sma:px-8 sma:mb-10`}
     >
