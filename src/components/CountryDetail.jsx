@@ -130,7 +130,7 @@ function Items({ name, span }) {
 
 function Border({ countryCode, onBorderClick, darkMode }) {
   const [borderName, setBorderName] = useState("");
-
+  console.log(countryCode);
   useEffect(() => {
     async function fetchBorderName() {
       try {
@@ -155,7 +155,7 @@ function Border({ countryCode, onBorderClick, darkMode }) {
           : "bg-dark-el-bg"
       } sma:text-[1.2rem]`}
       onClick={onBorderClick}
-      to={`/country/${borderName}`}
+      to={`/country/${countryCode}`}
     >
       {borderName}
     </Link>
