@@ -51,7 +51,6 @@ function CountryDetail({
         .join(", ")
     : `No Native name for ${country.name.common}`;
 
- 
   const currName = country?.currencies
     ? Object.values(country.currencies)?.[0]?.name
     : `No Currency for ${country.name.common}`;
@@ -64,7 +63,7 @@ function CountryDetail({
     ? Object.values(country.languages).sort().join(", ")
     : `No languages for ${country.name.common}`;
   return (
-    <section className="grid grid-cols-2 px-32 items-center mt-32 med:grid-cols-1 med:mt-20 sma:px-8 ">
+    <section className="grid grid-cols-2 px-32 items-center mt-32 med:grid-cols-1 med:mt-20 sma:px-8 pb-12 ">
       <div className="w-[55.9715rem] max:w-[40.9715rem] med:w-[31.9875rem] justify-items-center xsm:w-full">
         <img
           src={country.flags.svg}
