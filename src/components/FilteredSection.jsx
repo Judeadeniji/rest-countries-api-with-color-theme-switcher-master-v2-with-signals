@@ -8,7 +8,6 @@ function FilteredSection({
   country,
   darkMode,
 }) {
-  // console.log(region);
   return (
     <section className="flex justify-between px-32 mb-20 med:flex-col med:gap-20 sma:px-8 sma:mb-10">
       <div

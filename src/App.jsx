@@ -18,23 +18,23 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "setCountries":
-      return { ...state, countries: action.payload, errorPage: false };
+      return { ...state, countries: action.payload };
     case "isLoading":
-      return { ...state, errorPage: false, loading: action.payload };
+      return { ...state, loading: action.payload };
     case "setRegion":
       if (action.payload === "all")
         return {
           ...state,
           country: "",
           region: action.payload,
-          errorPage: false,
+
           apiUrl: "https://restcountries.com/v3.1/all",
         };
       return {
         ...state,
         region: action.payload,
         country: "",
-        errorPage: false,
+
         apiUrl: `https://restcountries.com/v3.1/region/${action.payload}`,
       };
 
@@ -44,12 +44,8 @@ function reducer(state, action) {
           ...state,
           country: action.payload,
           region: "all",
-          errorPage: false,
           apiUrl: "https://restcountries.com/v3.1/all",
         };
-      if (state.countries.status === 404) {
-        return { ...state, errorPage: true };
-      }
 
       return {
         ...state,
@@ -60,7 +56,7 @@ function reducer(state, action) {
 
     case "setError":
       return {
-        ...initialState,
+        ...state,
         darkMode: state.darkMode,
         errorPage: action.payload,
       };
@@ -85,25 +81,33 @@ function App() {
     countryInfo,
     darkMode,
   } = state;
-  // useEffect(() => {
-  //   if (countries.status === 404) {
-  //     dispatch({ type: "setError" });
-  //   }
-  // }, [countries]);
 
   useEffect(() => {
     const controller = new AbortController();
     async function getCountries() {
       try {
         dispatch({ type: "isLoading", payload: true });
+
         const res = await fetch(apiUrl, { signal: controller.signal });
         const data = await res.json();
-        dispatch({ type: "setCountries", payload: data });
+        if (data.length === 0) {
+          dispatch({ type: "setError", payload: true });
+        } else if (country) {
+          const newData = data.filter((c) =>
+            c.name.common.toLowerCase().startsWith(country.toLowerCase())
+          );
+          if (newData.length === 0)
+            dispatch({ type: "setError", payload: true });
+          dispatch({ type: "setCountries", payload: newData });
+        } else {
+          dispatch({ type: "setCountries", payload: data });
+        }
         dispatch({ type: "isLoading", payload: false });
       } catch (err) {
         if (err.name !== "AbortError") {
           console.log("error!!!!!!!!!!!!!!!!!!!!!!!");
           dispatch({ type: "setError", payload: true });
+          dispatch({ type: "isLoading", payload: false });
         }
       }
     }
@@ -114,10 +118,11 @@ function App() {
     return function () {
       controller.abort();
     };
-  }, [apiUrl]);
+  }, [apiUrl, country]);
 
   const updateRegion = (newRegion) => {
     dispatch({ type: "setRegion", payload: newRegion });
+    dispatch({ type: "setError", payload: false });
   };
 
   const searchCountry = (newCountry) => {
@@ -129,6 +134,7 @@ function App() {
   const toggleDarkMode = () => {
     dispatch({ type: "toggleDarkMode" });
   };
+
   return (
     <BrowserRouter>
       <Routes>
