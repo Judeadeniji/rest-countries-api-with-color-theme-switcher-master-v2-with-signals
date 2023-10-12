@@ -15,7 +15,6 @@ function Homepage({
   onToggleDarkMode,
   darkMode,
 }) {
-  console.log(errorPage);
   return (
     <div
       className={`font-sans font-normal min-h-screen  ${

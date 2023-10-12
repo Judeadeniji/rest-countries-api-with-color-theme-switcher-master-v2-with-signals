@@ -11,7 +11,7 @@ function FilteredSection({
   return (
     <section className="flex justify-between px-32 mb-20 med:flex-col med:gap-20 sma:px-8 sma:mb-10">
       <div
-        className={` rounded-lg py-7 px-12 flex items-center gap-8 w-full max-w-[48rem]   ${
+        className={` rounded-lg py-7 px-12 flex items-center gap-8 w-full max-w-[48rem] shadow-filter-sh  ${
           darkMode ? "bg-white" : "bg-dark-el-bg"
         } dark:bg-dark-el-bg`}
       >
