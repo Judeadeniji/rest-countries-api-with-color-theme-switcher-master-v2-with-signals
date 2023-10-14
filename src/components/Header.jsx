@@ -1,13 +1,14 @@
+import { useSignal } from "rc-extended/store";
+import { darkMode } from "@/lib/glob";
 import { Link } from "react-router-dom";
 import darkImg from "/dark.svg";
 import sunImg from "/sun.svg";
 
-function Header({ onToggleDarkMode, darkMode }) {
+function Header() {
+  const [$darkMode, toggle] = useSignal(darkMode)
   return (
     <header
-      className={` py-9 px-32 shadow-header-sh flex  justify-between mb-20  ${
-        darkMode ? "bg-white" : "bg-dark-el-bg"
-      } sma:px-8 sma:mb-10 dark:bg-dark-el-bg`}
+      className={` py-9 px-32 shadow-header-sh flex  justify-between mb-20  ${!$darkMode ? "bg-white" : "bg-dark-el-bg"} sma:px-8 sma:mb-10 dark:bg-dark-el-bg`}
     >
       <Link
         to={"/"}
@@ -17,15 +18,15 @@ function Header({ onToggleDarkMode, darkMode }) {
       </Link>
       <div
         className="flex items-center gap-2 cursor-pointer"
-        onClick={onToggleDarkMode}
+        onClick={() => toggle(v => !v)}
       >
         <img
-          src={darkMode ? darkImg : sunImg}
+          src={!$darkMode ? darkImg : sunImg}
           alt="dark icon"
           className="w-8 h-8"
         />
         <p className="font-semibold text-[1.6rem] sma:text-[1.2rem]">
-          {darkMode ? "Dark Mode" : "Light Mode"}
+          {!$darkMode ? "Dark Mode" : "Light Mode"}
         </p>
       </div>
     </header>

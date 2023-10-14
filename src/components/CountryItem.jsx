@@ -1,10 +1,15 @@
+import { Show } from "rc-extended";
+import { useSignalValue } from "rc-extended/store";
+import { darkMode } from "@/lib/glob";
 import { Link } from "react-router-dom";
 
-function CountryItem({ country, darkMode }) {
+function CountryItem({ country, key }) {
+  const $darkMode = useSignalValue(darkMode)
   return (
     <Link
+      key={key}
       className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer   ${
-        darkMode ? "bg-white" : "bg-dark-el-bg"
+        !$darkMode ? "bg-white" : "bg-dark-el-bg"
       } dark:bg-dark-el-bg`}
       to={`country/${country.cca3}`}
     >
@@ -29,7 +34,9 @@ function CountryItem({ country, darkMode }) {
         <h3 className="text-[1.4rem] font-semibold leading-[1.6rem]">
           Capital:{" "}
           <span className=" font-light">
-            {country.capital?.[0] ? country.capital?.[0] : "No capital"}
+            <Show when={country.capital?.[0]} fallback="No Capital">
+              {country.capital?.[0]}
+            </Show>
           </span>
         </h3>
       </div>
