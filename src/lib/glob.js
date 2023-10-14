@@ -48,7 +48,7 @@ export const useApp = defineStore("app-store", {
             state.error = true;
           } else {
             const newData = data.filter((c) =>
-              c.name.common.toLowerCase().includes(state.country.toLowerCase())
+              c.name.common.toLowerCase().startsWith(state.country.toLowerCase())
             );
             state.loading = false;
             if (!newData.length) {

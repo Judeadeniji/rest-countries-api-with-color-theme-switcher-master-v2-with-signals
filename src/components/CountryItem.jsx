@@ -3,11 +3,11 @@ import { useSignalValue } from "rc-extended/store";
 import { darkMode } from "@/lib/glob";
 import { Link } from "react-router-dom";
 
-function CountryItem({ country, key }) {
+function CountryItem({ country }) {
   const $darkMode = useSignalValue(darkMode)
   return (
     <Link
-      key={key}
+      key={country.cca3}
       className={`w-[26.4rem]   shadow-country-sh rounded-lg  cursor-pointer   ${
         !$darkMode ? "bg-white" : "bg-dark-el-bg"
       } dark:bg-dark-el-bg`}

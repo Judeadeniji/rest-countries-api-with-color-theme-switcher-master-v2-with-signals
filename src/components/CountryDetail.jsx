@@ -110,7 +110,7 @@ function Border({ countryCode }) {
     return <p>Something went wrong.</p>
   }
   
-  if (true) {
+  if (isPending) {
     return (
       <div className={`h-10 w-24 animate-pulse rounded-[0.2rem] shadow-border-sh cursor-pointer ${!$darkMode ? "bg-white border-0 border-solid border-[#979797]" : "bg-dark-el-bg"} dark:bg-dark-el-bg`} />
     )
