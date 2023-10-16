@@ -44,7 +44,7 @@ Users should be able to:
 
 - [Tailwind](https://tailwindcss.com/)
 - [React](https://reactjs.org/) - A JavaScript library for building interfaces
-- [RC Extended]() - A JavaScript library that provides enhanced hook and components for working with React.
+- [RC Extended](https://github.com/Judeadeniji/RC-Extended) - A JavaScript library that provides enhanced hook and components for working with React.
 
 ### what I learned
 
@@ -90,9 +90,7 @@ Overall I rebuilt this project to know RC-Extended better, it's strength and wea
 
 - Website - [TheLazyDev](https://www.the-lazy-dev.vercel.com)
 - Twitter (Me) - [@feranmiwebdev](https://www.twitter.com/feranmiwebdev)
-- Twitter (Toyan) - [@_Annonnymouss_](https://www.twitter.com/_Annonnymouss_)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Twitter (Toyan) - [@__Annonnymouss__](https://www.twitter.com/_Annonnymouss_)
 
 ## Acknowledgments
 
